@@ -25,7 +25,9 @@
           nativeBuildInputs = with pkgs; [ pkg-config ];
         };
       overlays = {
-        swww = _: prev: { swww = self.packages.x86_64-linux.swww; };
+        swww = _: prev: {
+          swww = self.swww;
+        };
         default = self.overlays.swww;
       };
     };
