@@ -24,5 +24,9 @@
           buildInputs = with pkgs; [ lz4 libxkbcommon ];
           nativeBuildInputs = with pkgs; [ pkg-config ];
         };
+      overlays = {
+        swww = _: prev: { swww = self.packages.x86_64-linux.swww; };
+        default = self.overlays.swww;
+      };
     };
 }
