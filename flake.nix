@@ -11,6 +11,7 @@
   };
   outputs = { self, nixpkgs, swww-src }:
     let
+      inherit (nixpkgs) lib;
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
