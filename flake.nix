@@ -40,7 +40,7 @@
             enable = lib.mkEnableOption
               "swww, a solution to your wayland wallpaper woes";
             package = lib.mkOption {
-              type = lib.type.package;
+              type = lib.types.package;
               default = self.packages.x86_64-linux.default;
             };
             systemd = {
