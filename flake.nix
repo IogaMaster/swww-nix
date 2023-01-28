@@ -52,7 +52,7 @@
             };
           };
           config = lib.mkIf cfg.enable (lib.mkMerge [
-            { home.packages = lib.optional (cfg.package != null) cfg.package; }
+            { home.packages = [ self.swww ]; }
 
             (lib.mkIf cfg.systemd.enable {
               systemd.user.services.swww = {
