@@ -30,5 +30,49 @@
         };
         default = self.overlays.swww;
       };
+
+      homeManagerModules.default = { config, lib, pkgs, ... }:
+        let cfg = config.programs.swww;
+        in
+        {
+          options.programs.swww = {
+            enable = lib.mkEnableOption
+              "swww, a solution to your wayland wallpaper woes";
+            package = lib.mkOption {
+              type = lib.type.package;
+              default = self.packages.x86_64-linux.default;
+            };
+            systemd = {
+              enable = lib.mkEnableOption "Enable systemd integration";
+              target = lib.mkOption {
+                type = lib.types.str;
+                default = "graphical-session.target";
+              };
+            };
+          };
+          config = lib.mkIf cfg.enable (lib.mkMerge [
+            { home.packages = lib.optional (cfg.package != null) cfg.package; }
+
+            (lib.mkIf cfg.systemd.enable {
+              systemd.user.services.swww = {
+                Unit = {
+                  Description =
+                    "swww, a solution to your wayland wallpaper woes";
+                  Documentation = "https://github.com/Hourus645/swww";
+                  PartOf = [ "graphical-session.target" ];
+                  After = [ "graphical-session.target" ];
+                };
+
+                Service = {
+                  ExecStart = "${cfg.package}/bin/swww-daemon";
+                  ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
+                  Restart = "on-failure";
+                  KillMode = "mixed";
+                };
+                Install = { WantedBy = [ cfg.systemd.target ]; };
+              };
+            })
+          ]);
+        };
     };
 }
