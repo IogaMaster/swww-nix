@@ -41,7 +41,7 @@
               "swww, a solution to your wayland wallpaper woes";
             package = lib.mkOption {
               type = lib.types.package;
-              default = self.packages.x86_64-linux.default;
+              default = self.swww;
             };
             systemd = {
               enable = lib.mkEnableOption "Enable systemd integration";
