@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1674487464,
-        "narHash": "sha256-Jgq50e4S4JVCYpWLqrabBzDp/1mfaxHCh8/OOorHTy0=",
+        "lastModified": 1674958881,
+        "narHash": "sha256-p1E20TGSgzs+EUhRPMe6fyZIxUV6CbcwilZEzy+XmAk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3954218cf613eba8e0dcefa9abe337d26bc48fd0",
+        "rev": "a0feb36dc510bfa8f8809980a8230617fb9eb618",
         "type": "github"
       },
       "original": {
@@ -25,17 +25,16 @@
     "swww-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1671370311,
-        "narHash": "sha256-+xSFrL5BbgtHsED2xADwpqS40ceMMPhT5run4KMoLHM=",
+        "lastModified": 1675008367,
+        "narHash": "sha256-QuvaOB9XDofrhhyMHbyyjpDjDWgaU0Lowr4z3zT3x+I=",
         "owner": "Horus645",
         "repo": "swww",
-        "rev": "a5abb25243161928b05e621691b2874e90086cd1",
+        "rev": "d0cdd38fe3e68f816f5674eaf91561e9886ccc15",
         "type": "github"
       },
       "original": {
         "owner": "Horus645",
         "repo": "swww",
-        "rev": "a5abb25243161928b05e621691b2874e90086cd1",
         "type": "github"
       }
     }

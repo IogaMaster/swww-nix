@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     swww-src = {
-      url = "github:Horus645/swww/a5abb25243161928b05e621691b2874e90086cd1";
+      url = "github:Horus645/swww";
       flake = false;
     };
   };
@@ -20,7 +20,7 @@
           name = "swww";
           version = "0.6.0";
           src = swww-src;
-          cargoSha256 = "4ToAD33Aj5PtqrPvgkokaKeJqDcBr44UZP4UygafTg4=";
+          cargoSha256 = "+KxU4LbFlIR982zFnrQCjSfBehj2JuGDYr9zj5J7HHM=";
           doCheck = false;
           buildInputs = with pkgs; [ lz4 libxkbcommon ];
           nativeBuildInputs = with pkgs; [ pkg-config ];
