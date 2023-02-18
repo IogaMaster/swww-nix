@@ -20,7 +20,7 @@
           name = "swww";
           version = "0.6.0";
           src = swww-src;
-          cargoSha256 = "Xa1uInyoRpWHYmPdhmlXmf5FJyBgMJmLPTVW8j27kFE=";
+          cargoSha256 = "NV4QPM+rU3VwXIsk0ZajECjKp1ENqqZHJYqL1pT7ftA=";
           doCheck = false;
           buildInputs = with pkgs; [ lz4 libxkbcommon ];
           nativeBuildInputs = with pkgs; [ pkg-config ];
